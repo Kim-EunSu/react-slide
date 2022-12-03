@@ -1,5 +1,4 @@
-// import React, { useRef, useState } from "react";
-
+import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,27 +10,34 @@ import "swiper/css/navigation";
 import "../css/swiper.css";
 
 // import required modules
-import { Keyboard, Pagination, Navigation } from "swiper";
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 export default function App() {
   return (
     <>
       <Swiper
-        slidesPerView={1}
         spaceBetween={30}
-        keyboard={{
-          enabled: true,
+        centeredSlides={true}
+        autoplay={{
+          delay: 1000,
+          disableOnInteraction: false,
         }}
         pagination={{
           clickable: true,
         }}
         navigation={true}
-        modules={[Keyboard, Pagination, Navigation]}
+        modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>
+          <img src="https://dimg.donga.com/ugc/CDB/SHINDONGA/Article/61/d7/de/7c/61d7de7c1e57d2738276.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="http://www.sisa-news.com/data/photos/20211147/art_163755602893_e1a4bc.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://gradium.co.kr/wp-content/uploads/healthy-diet.jpg" />
+        </SwiperSlide>
       </Swiper>
     </>
   );
